@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>Меню</title>
+<link rel="stylesheet" href="all.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+
+<header>
+<h1>Меню</h1>
+<nav>
+    <a href="main.html">Головна</a>
+    <a href="menu.html">Меню</a>
+    <a href="order.html">Замовлення</a>
+</nav>
+</header>
+
+<div class="container menu-grid">
+
+<!-- Панкейки -->
+<div class="menu-item">
+<img src="https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg">
+<h3>Панкейки</h3>
+<p>8$ / порція</p>
+<div class="controls">
+    <button onclick="this.nextElementSibling.textContent=Math.max(1,this.nextElementSibling.textContent-1)">−</button>
+    <span>1</span>
+    <button onclick="this.previousElementSibling.textContent++">+</button>
+</div>
+<button onclick="addItem(
+ 'pancakes',
+ 'Панкейки',
+ 8,
+ 'https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg',
+ Number(this.previousElementSibling.querySelector('span').textContent)
+)">Замовити</button>
+</div>
+
+<!-- ФРУКТОВИЙ САЛАТ -->
+<div class="menu-item">
+<img src="https://images.pexels.com/photos/1099680/pexels-photo-1099680.jpeg">
+<h3>Фруктовий салат</h3>
+<p>10$ / порція</p>
+<div class="controls">
+    <button onclick="this.nextElementSibling.textContent=Math.max(1,this.nextElementSibling.textContent-1)">−</button>
+    <span>1</span>
+    <button onclick="this.previousElementSibling.textContent++">+</button>
+</div>
+<button onclick="addItem(
+ 'salad',
+ 'Фруктовий салат',
+ 10,
+ 'https://images.pexels.com/photos/1099680/pexels-photo-1099680.jpeg',
+ Number(this.previousElementSibling.querySelector('span').textContent)
+)">Замовити</button>
+</div>
+
+<!-- Пончики -->
+<div class="menu-item">
+<img src="https://images.pexels.com/photos/3338681/pexels-photo-3338681.jpeg">
+<h3>Пончики</h3>
+<p>3$ / шт</p>
+<div class="controls">
+    <button onclick="this.nextElementSibling.textContent=Math.max(1,this.nextElementSibling.textContent-1)">−</button>
+    <span>1</span>
+    <button onclick="this.previousElementSibling.textContent++">+</button>
+</div>
+<button onclick="addItem(
+ 'donuts',
+ 'Пончики',
+ 3,
+ 'https://images.pexels.com/photos/3338681/pexels-photo-3338681.jpeg',
+ Number(this.previousElementSibling.querySelector('span').textContent)
+)">Замовити</button>
+</div>
+
+<!-- Торт -->
+<div class="menu-item">
+<img src="https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg">
+<h3>Шоколадний торт</h3>
+<p>6$ / шматок</p>
+<div class="controls">
+    <button onclick="this.nextElementSibling.textContent=Math.max(1,this.nextElementSibling.textContent-1)">−</button>
+    <span>1</span>
+    <button onclick="this.previousElementSibling.textContent++">+</button>
+</div>
+<button onclick="addItem(
+ 'cake',
+ 'Шоколадний торт',
+ 6,
+ 'https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg',
+ Number(this.previousElementSibling.querySelector('span').textContent)
+)">Замовити</button>
+</div>
+
+<!-- Кава -->
+<div class="menu-item">
+<img src="https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg">
+<h3>Еспрессо</h3>
+<select>
+    <option value="S|3">S – 3$</option>
+    <option value="M|6">M – 6$</option>
+    <option value="B|12">B – 12$</option>
+</select>
+<div class="controls">
+    <button onclick="this.nextElementSibling.textContent=Math.max(1,this.nextElementSibling.textContent-1)">−</button>
+    <span>1</span>
+    <button onclick="this.previousElementSibling.textContent++">+</button>
+</div>
+<button onclick="
+let v=this.previousElementSibling.previousElementSibling.value.split('|');
+addItem(
+ 'coffee_'+v[0],
+ 'Еспрессо '+v[0],
+ Number(v[1]),
+ 'https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg',
+ Number(this.previousElementSibling.querySelector('span').textContent)
+)">Замовити</button>
+</div>
+
+</div>
+
+<div id="popup" class="popup"></div>
+
+<footer>
+<p>📞 +380 99 123 45 67</p>
+</footer>
+
+</body>
+</html>
+

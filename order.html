@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>Замовлення</title>
+<link rel="stylesheet" href="all.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+
+<header>
+<h1>Оформлення замовлення</h1>
+<nav>
+    <a href="main.html">Головна</a>
+    <a href="menu.html">Меню</a>
+</nav>
+</header>
+
+<div class="container">
+<div id="cart"></div>
+
+<h2>Разом: <span id="total">0$</span></h2>
+
+<form onsubmit="submitOrder(event)"
+      style="
+        margin-top:30px;
+        background:white;
+        padding:30px;
+        border-radius:10px;
+      ">
+
+    <input style="width:100%;padding:12px;margin-bottom:15px"
+           placeholder="Ім'я" required>
+
+    <input style="width:100%;padding:12px;margin-bottom:15px"
+           placeholder="Телефон" required>
+
+    <input style="width:100%;padding:12px;margin-bottom:15px"
+           placeholder="Email (необовʼязково)">
+
+    <select style="width:100%;padding:12px;margin-bottom:15px"
+            onchange="toggleAddress(this.value)" required>
+        <option value="">Спосіб отримання</option>
+        <option value="here">На місці</option>
+        <option value="takeaway">На винос</option>
+        <option value="delivery">З доставкою</option>
+    </select>
+
+    <input id="address"
+           style="width:100%;padding:12px;margin-bottom:15px;display:none"
+           placeholder="Адреса доставки">
+
+    <button style="padding:12px 20px;font-size:16px">
+        Підтвердити замовлення
+    </button>
+</form>
+</div>
+
+<footer>
+<p>📍 Київ, вул. Кавова 12</p>
+</footer>
+
+</body>
+</html>
+
+
